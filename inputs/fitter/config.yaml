@@ -1,0 +1,23 @@
+# This is the fitter config file.
+# Every option sets how GUNDAM has to load and run the fit
+
+# Define how to compute the likelihood
+likelihoodInterfaceConfig: "./inputs/fitter/likelihood/config.yaml"
+
+# Define the likelihood minimizer (Minuit/MCMC)
+minimizerConfig: "./inputs/fitter/minimizer/config.yaml"
+
+# Define the parameter scanner
+parameterScannerConfig: "./inputs/fitter/scan/config.yaml"
+
+# When running with the --pca option (Principal Component Analysis), some parameter can be fixed during the fit.
+# This criterion sets the threshold to define if a parameter should be fixed or not.
+#
+# If after moving the parameter to 1 sigma, the LLH response change (increase or decrease) wrt the nominal to a value
+# lower that `pcaDeltaLlhThreshold`, the parameter will be fixed.
+#
+# This allows to fix parameters which won't affect
+pcaDeltaLlhThreshold: 1.0
+
+
+

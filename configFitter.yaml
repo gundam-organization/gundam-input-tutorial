@@ -1,7 +1,7 @@
 # This is the master file for the configuration of the fitter
 
+outputFolder: "./output/fit"
+minGundamVersion: 1.9.0
 
-
-
-
+fitterEngineConfig: "./inputs/fitter/config.yaml"
 
