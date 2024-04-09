@@ -16,7 +16,7 @@ fitSampleList:
 
   - name: "Topology 3"
     isEnabled: true # use false to turn it off
-    binning: "./inputs/fitter/likelihood/datasets/propagator/samples/binnings/topology2.yaml"
+    binning: "./inputs/fitter/likelihood/datasets/propagator/samples/binnings/topology3.yaml"
     selectionCuts: "topology == 3"
     dataSets: [ "My dataset 1" ]
 

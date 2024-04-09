@@ -4,4 +4,5 @@ sampleSetConfig: "./inputs/fitter/likelihood/datasets/propagator/samples/config.
 
 #parametersManagerConfig: "./inputs/fitter/likelihood/datasets/propagator/parameters/config.yaml"
 
+plotGeneratorConfig:    "./inputs/fitter/likelihood/datasets/propagator/plots/config.yaml"
 

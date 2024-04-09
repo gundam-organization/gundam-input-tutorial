@@ -1,5 +1,5 @@
 
-int nEvents{1000000};
+int nEvents{int(1E6)};
 
 struct Event{
   int reaction{-1};
@@ -30,31 +30,38 @@ void buildInputRootFile(){
   auto fShape1 = std::make_unique<TF1>("fShape1", "ROOT::Math::chisquared_pdf(x, 4)", 0, 15);
   auto fShape2 = std::make_unique<TF1>("fShape2", "ROOT::Math::chisquared_pdf(x, 5)", 0, 15);
 
-  double fluct;
+  double buffer;
   for( int iEvent = 0 ; iEvent < nEvents ; iEvent++ ){
 
-    gRandom->Rndm() > fraction ? e.reaction = 1 : e.reaction = 2;
+    buffer = gRandom->Rndm();
+    if     ( buffer < 0.7 ){ e.reaction = 1; }
+    else if( buffer < 0.9 ){ e.reaction = 2; }
+    else if( buffer < 0.95 ){ e.reaction = 3; }
+    else if( buffer < 0.98 ){ e.reaction = 4; }
+    else if( buffer < 0.99 ){ e.reaction = 5; }
+    else{ e.reaction = 6; }
 
     if(e.reaction == 1){
       e.enu = fShape1->GetRandom(gRandom);
       e.pmu = std::max( 0., e.enu*(0.95 + 0.05*gRandom->Gaus(0, 1)) - 0.1 );
       e.pp = 0.1*fShape1->GetRandom(gRandom);
 
-      fluct = gRandom->Rndm();
-      if     ( fluct < 0.7 ){ e.topology = 1; }
-      else if( fluct < 0.85 ){ e.topology = 2; }
-      else if( fluct < 0.95 ){ e.topology = 3; }
+      buffer = gRandom->Rndm();
+      if     ( buffer < 0.7 ){ e.topology = 1; }
+      else if( buffer < 0.85 ){ e.topology = 2; }
+      else if( buffer < 0.95 ){ e.topology = 3; }
       else{ e.topology = -1; } // invisible
     }
-    if(e.reaction == 2){
+    else {
       e.enu = fShape2->GetRandom(gRandom);
       e.pmu = std::max( 0., e.enu*(0.8 + 0.1*gRandom->Gaus(0, 1)) - 0.2 );
       e.pp = 0.1*fShape2->GetRandom(gRandom);
 
-      fluct = gRandom->Rndm();
-      if     ( fluct < 0.5 ){ e.topology = 2; }
-      else if( fluct < 0.75 ){ e.topology = 3; }
-      else if( fluct < 0.85 ){ e.topology = 4; }
+      buffer = gRandom->Rndm();
+      if     ( buffer < 0.1 ){ e.topology = 1; }
+      else if( buffer < 0.5 ){ e.topology = 2; }
+      else if( buffer < 0.75 ){ e.topology = 3; }
+      else if( buffer < 0.85 ){ e.topology = 4; }
       else{ e.topology = -1; }
     }
 
