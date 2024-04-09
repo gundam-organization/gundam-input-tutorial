@@ -1,0 +1,11 @@
+
+
+fitSampleList:
+
+  - name: "Sample 1"
+    isEnabled: true # use false to turn it off
+    binning: "./inputs/fitter/likelihood/datasets/propagator/samples/binning/sample1.txt"
+    selectionCuts: "SelectedSample == 7"
+    dataSets: [ "ND280" ]
+
+

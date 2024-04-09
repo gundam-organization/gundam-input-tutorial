@@ -1,0 +1,6 @@
+
+
+propagatorConfig: "./inputs/fitter/likelihood/datasets/propagator/config.yaml"
+
+dataSetList:
+  - name: ""

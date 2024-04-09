@@ -1,5 +1,7 @@
 
 
+dataSetManagerConfig: "./inputs/fitter/likelihood/datasets/config.yaml"
+
 
 
 
