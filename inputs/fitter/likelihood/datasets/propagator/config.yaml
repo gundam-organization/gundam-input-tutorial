@@ -2,6 +2,6 @@
 
 sampleSetConfig: "./inputs/fitter/likelihood/datasets/propagator/samples/config.yaml"
 
-parametersManagerConfig: "./inputs/fitter/likelihood/datasets/propagator/parameters/config.yaml"
+#parametersManagerConfig: "./inputs/fitter/likelihood/datasets/propagator/parameters/config.yaml"
 
 

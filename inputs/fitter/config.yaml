@@ -8,7 +8,7 @@ likelihoodInterfaceConfig: "./inputs/fitter/likelihood/config.yaml"
 minimizerConfig: "./inputs/fitter/minimizer/config.yaml"
 
 # Define the parameter scanner
-parameterScannerConfig: "./inputs/fitter/scan/config.yaml"
+#parameterScannerConfig: "./inputs/fitter/scan/config.yaml"
 
 # When running with the --pca option (Principal Component Analysis), some parameter can be fixed during the fit.
 # This criterion sets the threshold to define if a parameter should be fixed or not.

@@ -1,0 +1,15 @@
+
+binList:
+  - edgesList: [ { name: "pmu", bounds: [0.5, 1.5] }, { name: "pp", bounds: [0.1, 0.4] } ]
+  - edgesList: [ { name: "pmu", bounds: [0.5, 1.5] }, { name: "pp", bounds: [0.4, 2] } ]
+  - edgesList: [ { name: "pmu", bounds: [1.5, 2  ] }, { name: "pp", bounds: [0.1, 0.4] } ]
+  - edgesList: [ { name: "pmu", bounds: [1.5, 2  ] }, { name: "pp", bounds: [0.4, 2] } ]
+  - edgesList: [ { name: "pmu", bounds: [2, 2.5  ] }, { name: "pp", bounds: [0.1, 0.4] } ]
+  - edgesList: [ { name: "pmu", bounds: [2, 2.5  ] }, { name: "pp", bounds: [0.4, 2] } ]
+  - edgesList: [ { name: "pmu", bounds: [2.5, 3  ] }, { name: "pp", bounds: [0.1, 0.4] } ]
+  - edgesList: [ { name: "pmu", bounds: [2.5, 3  ] }, { name: "pp", bounds: [0.4, 2] } ]
+  - edgesList: [ { name: "pmu", bounds: [3, 4    ] }, { name: "pp", bounds: [0.1, 0.4] } ]
+  - edgesList: [ { name: "pmu", bounds: [3, 4    ] }, { name: "pp", bounds: [0.4, 2] } ]
+  - edgesList: [ { name: "pmu", bounds: [4, 6    ] } ]
+  - edgesList: [ { name: "pmu", bounds: [6, 9    ] } ]
+  - edgesList: [ { name: "pmu", bounds: [9, 30   ] } ]
