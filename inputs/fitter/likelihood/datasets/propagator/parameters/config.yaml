@@ -1,3 +1,23 @@
 
 
 
+
+parameterSetList:
+  - name: "Flux parameters"
+    isEnabled: true
+
+    useEigenDecompInFit: true # false by default
+    allowPca: true # false by default
+
+    covarianceMatrixFilePath: "./inputs/fitter/likelihood/datasets/propagator/parameters/flux/covarianceFile.root"
+    covarianceMatrixTMatrixD: "covarianceMatrix"
+
+    # knowing that makes it faster to load
+    useOnlyOneParameterPerEvent: true
+
+    dialSetDefinitions:
+      - applyOnDataSets: [ "*" ]
+        parametersBinningPath: "./inputs/fitter/likelihood/datasets/propagator/parameters/flux/binning.yaml"
+        printDialsSummary: true
+    printDialSetsSummary: true
+
