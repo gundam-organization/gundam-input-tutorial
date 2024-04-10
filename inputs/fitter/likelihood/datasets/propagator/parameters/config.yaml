@@ -4,7 +4,9 @@
 
 parameterSetList:
   - name: "Flux parameters"
-    isEnabled: true
+    isEnabled: true # default: true
+
+    # example of parameters defined with a covariance matrix
 
     useEigenDecompInFit: true # false by default
     allowPca: true # false by default
@@ -20,4 +22,20 @@ parameterSetList:
         parametersBinningPath: "./inputs/fitter/likelihood/datasets/propagator/parameters/flux/binning.yaml"
         printDialsSummary: true
     printDialSetsSummary: true
+
+
+  - name: "Free norm parameters"
+    isEnabled: true # default: true
+
+    nominalStepSize: 0.1
+
+    # as the template parameters are defined with a true binning, we only expect one parameter to apply on each event
+    useOnlyOneParameterPerEvent: true
+
+    # here you can define the binning of the template parameters
+    dialSetDefinitions:
+      - applyOnDataSets: [ "*" ]
+        # the true variables will be defined here:
+        parametersBinningPath: "./inputs/fitter/likelihood/datasets/propagator/parameters/free/binning.yaml"
+#        applyCondition: ""
 

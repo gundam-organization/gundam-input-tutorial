@@ -1,0 +1,4 @@
+
+binningDefinition:
+  - { name: "reaction", values: [1, 2] }
+  - { name: "pmu", edges: [0, 1, 2, 4, 7, 30] }
