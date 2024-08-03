@@ -1,14 +1,20 @@
 
+canvasParameters:
+  width: 1024
+  height: 768
+  nbXplots: 2
+  nbYplots: 2
+
 varDictionaries:
   - name: "reaction"
     dictionary:
       - { value: 0, title: "UNDEFINED", color: 1 } # kBlack
-      - { value: 1, title: "#nu_#mu + A #rightarrow reaction 1", colorHex: "#cfe8ff" }
-      - { value: 2, title: "#nu_#mu + A #rightarrow reaction 2", colorHex: "#aabfe0" }
-      - { value: 3, title: "#nu_#mu + A #rightarrow reaction 3", colorHex: "#9b9ed2" }
-      - { value: 4, title: "#nu_#mu + A #rightarrow reaction 4", colorHex: "#5670c2" }
-      - { value: 5, title: "#nu_#mu + A #rightarrow reaction 5", colorHex: "#293377" }
-      - { value: 6, title: "#nu_#mu + A #rightarrow reaction 6", colorHex: "#1b1b52" }
+      - { value: 1, title: "#nu_{#mu} + A #rightarrow reaction 1", colorHex: "#cfe8ff" }
+      - { value: 2, title: "#nu_{#mu} + A #rightarrow reaction 2", colorHex: "#aabfe0" }
+      - { value: 3, title: "#nu_{#mu} + A #rightarrow reaction 3", colorHex: "#9b9ed2" }
+      - { value: 4, title: "#nu_{#mu} + A #rightarrow reaction 4", colorHex: "#5670c2" }
+      - { value: 5, title: "#nu_{#mu} + A #rightarrow reaction 5", colorHex: "#293377" }
+      - { value: 6, title: "#nu_{#mu} + A #rightarrow reaction 6", colorHex: "#1b1b52" }
 
 histogramsDefinition:
   - varToPlot: "Raw"
