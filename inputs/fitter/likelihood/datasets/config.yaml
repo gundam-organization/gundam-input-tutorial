@@ -1,19 +1,15 @@
 
+- name: "My dataset 1"
 
-propagatorConfig: "./inputs/fitter/likelihood/datasets/propagator/config.yaml"
+  model:
 
-dataSetList:
-  - name: "My dataset 1"
+    filePathList:
+      - "./inputs/fitter/likelihood/datasets/mydataset.root"
 
-    model:
+    tree: "events"
 
-      filePathList:
-        - "./inputs/fitter/likelihood/datasets/mydataset.root"
+    selectionCutFormula: "topology != -1"
 
-      tree: "events"
-
-      selectionCutFormula: "topology != -1"
-
-      nominalWeightFormula:
-        - "asimovWeight"
+    nominalWeightFormula:
+      - "asimovWeight"
 
