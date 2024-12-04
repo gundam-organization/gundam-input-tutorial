@@ -11,7 +11,7 @@ parameterSetList:
     useEigenDecompInFit: true # false by default
     allowPca: true # false by default
 
-    covarianceMatrixFilePath: "./inputs/fitter/likelihood/datasets/propagator/parameters/flux/covarianceFile.root"
+    covarianceMatrixFilePath: "./inputs/fitter/likelihood/propagator/parameters/flux/covarianceFile.root"
     covarianceMatrixTMatrixD: "covarianceMatrix"
 
     # knowing that makes it faster to load
@@ -19,7 +19,7 @@ parameterSetList:
 
     dialSetDefinitions:
       - applyOnDataSets: [ "*" ]
-        parametersBinningPath: "./inputs/fitter/likelihood/datasets/propagator/parameters/flux/binning.yaml"
+        parametersBinningPath: "./inputs/fitter/likelihood/propagator/parameters/flux/binning.yaml"
         printDialsSummary: true
     printDialSetsSummary: true
 
@@ -36,6 +36,6 @@ parameterSetList:
     dialSetDefinitions:
       - applyOnDataSets: [ "*" ]
         # the true variables will be defined here:
-        parametersBinningPath: "./inputs/fitter/likelihood/datasets/propagator/parameters/free/binning.yaml"
+        parametersBinningPath: "./inputs/fitter/likelihood/propagator/parameters/free/binning.yaml"
 #        applyCondition: ""
 

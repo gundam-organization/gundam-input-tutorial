@@ -4,25 +4,25 @@ fitSampleList:
 
   - name: "Topology 1"
     isEnabled: true # use false to turn it off
-    binning: "./inputs/fitter/likelihood/datasets/propagator/samples/binnings/topology1.yaml"
+    binning: "./inputs/fitter/likelihood/propagator/samples/binnings/topology1.yaml"
     selectionCuts: "topology == 1"
     dataSets: [ "My dataset 1" ]
 
   - name: "Topology 2"
     isEnabled: true # use false to turn it off
-    binning: "./inputs/fitter/likelihood/datasets/propagator/samples/binnings/topology2.yaml" # will be unfolded
+    binning: "./inputs/fitter/likelihood/propagator/samples/binnings/topology2.yaml" # will be unfolded
     selectionCuts: "topology == 2"
     dataSets: [ "My dataset 1" ]
 
   - name: "Topology 3"
     isEnabled: true # use false to turn it off
-    binning: "./inputs/fitter/likelihood/datasets/propagator/samples/binnings/topology3.yaml"
+    binning: "./inputs/fitter/likelihood/propagator/samples/binnings/topology3.yaml"
     selectionCuts: "topology == 3"
     dataSets: [ "My dataset 1" ]
 
   - name: "Topology 4"
     isEnabled: true # use false to turn it off
-    binning: "./inputs/fitter/likelihood/datasets/propagator/samples/binnings/topology4.txt" # old
+    binning: "./inputs/fitter/likelihood/propagator/samples/binnings/topology4.txt" # old
     selectionCuts: "topology == 4"
     dataSets: [ "My dataset 1" ]
 
