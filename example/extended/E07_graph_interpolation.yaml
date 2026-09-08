@@ -1,0 +1,96 @@
+# Step 10: Graph interpolation (piecewise linear) on a non-smooth response function.
+# Applies a Graph dial (piecewise-linear interpolation, no "options" key) to the
+# intentionally non-smooth par3_TGraph response, on top of free and correlated
+# normalization parameters.
+# Compare against E05 (Spline: natural) and E06 (Spline: not-a-knot) — same
+# dataset and parameters, different interpolation method on the same response branch.
+# Run from the project root: gundamFitter -c example/extended/E07_graph_interpolation.yaml
+
+outputFolder: "./example/extended/output"
+
+fitterEngineConfig:
+
+  minimizerConfig:
+    type: "RootMinimizer"
+
+  likelihoodInterfaceConfig:
+
+    dataSetList:
+      - name: "My dataset 1"
+
+        model:
+
+          filePathList:
+            - "./mockDatasetGen/mydataset.root"
+
+          tree: "events"
+
+          selectionCutFormula: "selection != -1"
+
+          nominalTreeWeightFormula:
+            - "asimovWeight"
+
+    propagatorConfig:
+
+      sampleSetConfig:
+        sampleList:
+          - name: "Selection 1 (1D: pmu)"
+            isEnabled: true
+            selectionCutStr: "selection == 1"
+            binning: "./example/extended/selection_1d.txt"
+            dataSets: [ "My dataset 1" ]
+
+          - name: "Selection 2 (2D: pmu x pp)"
+            isEnabled: true
+            selectionCutStr: "selection == 2"
+            binning: "./example/extended/selection_2d.txt"
+            dataSets: [ "My dataset 1" ]
+
+          - name: "Selection 3 (3D: enu x pmu x pp)"
+            isEnabled: true
+            selectionCutStr: "selection == 3"
+            binning: "./example/extended/selection_3d.txt"
+            dataSets: [ "My dataset 1" ]
+
+      parametersManagerConfig:
+        parameterSetList:
+          - name: "Correlated normalization parameters"
+            isEnabled: true
+            enableEigenDecomp: false
+            enablePca: false
+            useOnlyOneParameterPerEvent: true
+            parameterDefinitionFilePath: "./example/extended/covarianceFile.root"
+            covarianceMatrix: "covarianceMatrix"
+            dialSetDefinitions:
+              - applyOnDataSets: [ "My dataset 1" ]
+                parametersBinningPath: "./example/extended/correlated_parameters.txt"
+
+          - name: "Free normalization parameters"
+            isEnabled: true
+            nominalStepSize: 0.1
+            useOnlyOneParameterPerEvent: true
+            dialSetDefinitions:
+              - applyOnDataSets: [ "My dataset 1" ]
+                parametersBinningPath: "./example/extended/parameters.txt"
+
+          - name: "Dummy Systematics"
+            isEnabled: true
+            nominalStepSize: 0.1
+            parameterDefinitions:
+              - name: "Graph interpolation parameter"
+                isEnabled: true
+                priorType: Gaussian
+                priorValue: 1.0
+                isFixed: false
+                isThrown: false
+                parameterStepSize: 0.1
+                parameterLimits: [0.0, 2.0]
+                physicalLimits: [0.0, 2.0]
+                throwLimits: [0.0, 2.0]
+                dialSetDefinitions:
+                  - dialType: Graph
+                    treeExpression: par3_TGraph
+                    applyOnDataSets: [ "My dataset 1" ]
+                    allowDialExtrapolation: false
+                    minDialResponse: 0.0
+                    maxDialResponse: 3.0

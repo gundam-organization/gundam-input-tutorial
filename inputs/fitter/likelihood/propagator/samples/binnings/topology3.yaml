@@ -1,3 +1,0 @@
-
-binningDefinition:
-  - { name: "pmu", nBins: 10, min: 0, max: 15 }

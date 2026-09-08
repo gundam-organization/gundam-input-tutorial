@@ -1,0 +1,23 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# macOS
+.DS_Store
+
+# ROOT / GUNDAM generated outputs
+*.log
+*.out
+
+# Generated outputs
+output/
+outputs/
+tmp/
+temp/
+
+# VS Code local settings
+.vscode/
+**/inputs/datasets/*.root
+mockDatasetGen/*.root
+response_functions.pdf
+*.pdf

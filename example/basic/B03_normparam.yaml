@@ -1,0 +1,56 @@
+# Step 3: Dataset + selection + one normalization parameter.
+# A single free normalization parameter with prior value 1 is applied on each selected event
+# and varied in the fit
+# Asimov fit is performed
+# Run from the project root: gundamFitter -c example/basic/B03_normparam.yaml
+
+outputFolder: "./example/basic/output"
+
+fitterEngineConfig:
+
+  minimizerConfig:
+    type: "RootMinimizer"
+
+  likelihoodInterfaceConfig:
+
+    dataSetList:
+      - name: "My dataset 1"
+
+        model:
+
+          filePathList:
+            - "./mockDatasetGen/mydataset.root"
+
+          tree: "events"
+
+          selectionCutFormula: "selection != -1"
+
+          nominalTreeWeightFormula:
+            - "asimovWeight"
+            
+    propagatorConfig:
+
+      sampleSetConfig:
+        sampleList:
+          - name: "Selection 1"
+            isEnabled: true
+            selectionCutStr: "selection == 1"
+            binning: "./example/basic/selection_1d.txt"
+            dataSets: [ "My dataset 1" ]
+
+      parametersManagerConfig:
+        parameterSetList:
+          - name: "Systematics"
+            isEnabled: true
+
+            nominalStepSize: 0.1
+
+            parameterDefinitions:
+             - name: “Free normalization”
+               isEnabled: true
+               priorType: Flat
+               priorValue: 1.0
+               parameterStepSize: 0.1
+               dialSetDefinitions:
+                - dialType: Normalization
+                  applyOnDataSets: [ "My dataset 1" ]

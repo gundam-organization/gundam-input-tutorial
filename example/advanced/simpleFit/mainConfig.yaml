@@ -1,0 +1,19 @@
+outputFolder: "./example/advanced/output"
+minGundamVersion: 1.9.0
+
+fitterEngineConfig:
+
+  minimizerConfig:
+    type: "RootMinimizer"
+
+  likelihoodInterfaceConfig:
+
+    dataSetList: "./example/advanced/simpleFit/inputs/datasets/config.yaml"
+
+    # Temporarily disabled due to a known issue that causes plots to be displayed incorrectly. 
+    # Re-enable this option once the issue has been resolved.    
+    #plotGeneratorConfig: "./example/advanced/simpleFit/inputs/plots/config.yaml"
+
+    propagatorConfig:
+      sampleSetConfig: "./example/advanced/simpleFit/inputs/samples/config.yaml"
+      parametersManagerConfig: "./example/advanced/simpleFit/inputs/parameters/config.yaml"

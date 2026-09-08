@@ -1,0 +1,45 @@
+# Step 1: Load dataset only.
+# Verifies that the ROOT file opens, the event tree is readable, and the
+# dataset-level cut (selection != -1) is applied.  All selected events are
+# binned in 1D (pmu) using the local selection_1d.txt file. No selection cut
+# and no parameters are defined.
+# Run dry run: -d (required — with 0 free parameters, a full fit has nothing
+# for Migrad to minimize and errors out)
+# Run from the project root: gundamFitter -d -c example/basic/B01_load_dataset.yaml
+
+outputFolder: "./example/basic/output"
+
+fitterEngineConfig:
+
+  minimizerConfig:
+    type: "RootMinimizer"
+
+  likelihoodInterfaceConfig:
+
+    dataSetList:
+      - name: "My dataset 1"
+
+        model:
+
+          filePathList:
+            - "./mockDatasetGen/mydataset.root"
+
+          tree: "events"
+
+          selectionCutFormula: "selection != -1"
+
+          nominalTreeWeightFormula:
+            - "asimovWeight"
+
+    propagatorConfig:
+
+      sampleSetConfig:
+        sampleList:
+          - name: "All selected events"
+            isEnabled: true
+            binning: "./example/basic/selection_1d.txt"
+            dataSets: [ "My dataset 1" ]
+
+      parametersManagerConfig:
+        parameterSetList: []
+

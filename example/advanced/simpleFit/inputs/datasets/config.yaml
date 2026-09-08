@@ -1,0 +1,23 @@
+
+- name: "My dataset 1"
+  selectedDataEntry: "data"
+
+  model:
+
+    filePathList:
+      - "./mockDatasetGen/mydataset.root"
+
+    tree: "events"
+
+    selectionCutFormula: "selection != -1"
+
+    nominalTreeWeightFormula:
+      - "asimovWeight"
+
+  data:
+    
+    - name: "data"
+      tree: "events"
+      filePathList:
+        - "./mockDatasetGen/mydataset.root"
+

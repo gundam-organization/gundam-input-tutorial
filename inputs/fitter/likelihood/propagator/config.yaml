@@ -1,8 +1,0 @@
-
-
-sampleSetConfig: "./inputs/fitter/likelihood/propagator/samples/config.yaml"
-
-parametersManagerConfig: "./inputs/fitter/likelihood/propagator/parameters/config.yaml"
-
-plotGeneratorConfig:    "./inputs/fitter/likelihood/propagator/plots/config.yaml"
-

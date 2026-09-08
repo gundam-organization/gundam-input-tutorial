@@ -1,0 +1,26 @@
+
+sampleList:
+
+  - name: "Selection 1"
+    isEnabled: true
+    binning: "./example/advanced/simpleFit/inputs/samples/binnings/selection1.txt"
+    selectionCutStr: "selection == 1"
+    dataSets: [ "My dataset 1" ]
+
+  - name: "Selection 2"
+    isEnabled: true
+    binning: "./example/advanced/simpleFit/inputs/samples/binnings/selection2.txt"
+    selectionCutStr: "selection == 2"
+    dataSets: [ "My dataset 1" ]
+
+  - name: "Selection 3"
+    isEnabled: true
+    binning: "./example/advanced/simpleFit/inputs/samples/binnings/selection3.txt"
+    selectionCutStr: "selection == 3"
+    dataSets: [ "My dataset 1" ]
+
+  - name: "Selection 4"
+    isEnabled: true
+    binning: "./example/advanced/simpleFit/inputs/samples/binnings/selection4.txt"
+    selectionCutStr: "selection == 4"
+    dataSets: [ "My dataset 1" ]
