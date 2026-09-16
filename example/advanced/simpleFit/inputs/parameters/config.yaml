@@ -5,7 +5,7 @@ parameterSetList:
     isEnabled: true # default: true
     
     # Throw this set when generating toy data
-    enableThrowToyParameters: false
+    enableThrowToyParameters: true
 
     # example of parameters defined with a covariance matrix
 

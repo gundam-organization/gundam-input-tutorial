@@ -112,6 +112,49 @@ gundamFitter -c example/extended/E07_graph_interpolation.yaml
 gundamFitter -a -c example/advanced/simpleFit/mainConfig.yaml -t 4
 ```
 
+#### Toy Throwing Example
+
+To throw toy values for the parameters in a parameter set, make sure that the
+`enableThrowToyParameters` option is set to `true` for that parameter set.
+
+Then, run `gundamFitter` with the `--toy` option:
+
+```bash
+gundamFitter -c example/advanced/simpleFit/mainConfig.yaml -t 4 --toy 0
+```
+
+The example above runs a single toy with toy index `0`.
+
+Statistical uncertainties in the toy generation can additionally be controlled
+with the following options:
+
+```yaml
+enableStatThrowInToys: false
+enableEventMcThrow: false
+gaussStatThrowInToys: false
+```
+
+By default, the statistical uncertainties controlled by
+`enableStatThrowInToys` and `enableEventMcThrow` are enabled.
+
+To disable them, an override file containing the corresponding settings can be
+used:
+
+```bash
+gundamFitter \
+  -c example/advanced/simpleFit/mainConfig.yaml \
+  -of example/advanced/simpleFit/overrides/toysSettings.yaml \
+  -t 4 \
+  --toy 0
+```
+
+To run multiple toys, `gundamFitter` can be called in a simple Bash loop. The example
+provided in the `./example/advanced/simpleFit/run_toys.sh` script throws 5 toys and can be run with:
+
+```bash
+./example/advanced/simpleFit/run_toys.sh
+```
+
 ---
 
 ## Dial types reference

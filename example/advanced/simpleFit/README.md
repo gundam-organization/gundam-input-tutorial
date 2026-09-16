@@ -39,6 +39,12 @@ See [Building the input files](../../README.md#building-the-input-files) in the 
 gundamFitter -c example/advanced/simpleFit/mainConfig.yaml
 ```
 
+## Throwing toys
+
+```bash
+./example/advanced/simpleFit/run_toys.sh
+```
+
 ---
 
 ## Input organization

@@ -1,0 +1,12 @@
+fitterEngineConfig:
+  likelihoodInterfaceConfig:
+
+    enableStatThrowInToys: false
+    enableEventMcThrow: false
+    gaussStatThrowInToys: false
+
+    propagatorConfig:
+      parametersManagerConfig:
+        parameterSetList:
+          - name: "List of correlated normalization parameters"
+            enableThrowToyParameters: true
